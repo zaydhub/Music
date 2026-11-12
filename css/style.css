@@ -1,0 +1,50 @@
+/* Keep all your existing CSS, but add these changes at the bottom */
+
+/* Mobile Adjustments for Capacitor */
+@media (max-width: 768px) {
+    body {
+        align-items: flex-start; /* Move app to top of screen */
+    }
+
+    .wmp-window {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0; /* Full screen on mobile */
+        border: none;
+    }
+
+    /* Add safe area padding for Android status bar */
+    .mobile-safe-top {
+        padding-top: env(safe-area-inset-top, 20px);
+        height: calc(35px + env(safe-area-inset-top, 20px));
+    }
+
+    .window-controls {
+        display: none; /* Hide minimize/maximize/close on mobile */
+    }
+
+    .main-content {
+        flex-direction: column; /* Stack vertically */
+        padding: 10px;
+    }
+
+    .player-core {
+        min-height: 250px; /* Give the album art some space */
+    }
+
+    .playlist-sidebar {
+        max-height: 150px; /* Limit playlist height so controls stay visible */
+    }
+
+    .volume-control {
+        position: static;
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    .controls-bar {
+        padding-bottom: env(safe-area-inset-bottom, 20px); /* Space for Android nav bar */
+        height: auto;
+        padding-top: 10px;
+    }
+}
