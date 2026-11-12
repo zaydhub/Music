@@ -1,0 +1,6 @@
+{
+  "appId": "com.zayd.music",
+  "appName": "Music",
+  "webDir": ".",
+  "bundledWebRuntime": false
+}
