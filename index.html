@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Media Player</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <div class="wmp-window">
+        
+        <!-- On mobile, we hide the window controls and just keep the app title -->
+        <div class="title-bar mobile-safe-top">
+            <div class="app-title">Media Player</div>
+            <div class="window-controls">
+                <button class="minimize">—</button>
+                <button class="maximize">□</button>
+                <button class="close">✕</button>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="player-core">
+                <div class="visualizer">
+                    <div class="album-art-placeholder">♪</div>
+                </div>
+                <div class="track-info">
+                    <h2 id="track-title">Song Title</h2>
+                    <p id="track-artist">Artist Name</p>
+                </div>
+            </div>
+
+            <div class="playlist-sidebar">
+                <div class="playlist-header">Up Next</div>
+                <ul class="playlist-items" id="playlist">
+                    <!-- JS will populate this -->
+                </ul>
+            </div>
+        </div>
+
+        <div class="controls-bar">
+            <div class="seek-bar-container">
+                <span class="time current" id="current-time">0:00</span>
+                <input type="range" class="seek-bar" id="seek-bar" value="0" min="0" max="100">
+                <span class="time total" id="total-time">0:00</span>
+            </div>
+
+            <div class="buttons">
+                <button class="play-pause" id="play-btn">▶</button>
+                <button class="stop" id="stop-btn">■</button>
+                <button class="next" id="next-btn">⏭</button>
+            </div>
+
+            <div class="volume-control">
+                <span class="volume-icon">🔊</span>
+                <input type="range" class="volume-slider" id="volume-slider" min="0" max="1" step="0.1" value="1">
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden Audio Element -->
+    <audio id="audio-player"></audio>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
